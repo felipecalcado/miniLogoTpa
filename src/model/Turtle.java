@@ -18,11 +18,14 @@ public class Turtle implements ITurtle{
 	
 	Graphics g;
 	private final Color COR = Color.BLUE;
+	private final int X_INICIAL = 100;
+	private final int Y_INICIAL = 100;
+	private final double ANGULO_INICIAL = 0;
 	
 
     public Turtle () {
-        pos = new Vector2D(0,0);
-        angle = 0.0;
+        pos = new Vector2D(X_INICIAL,Y_INICIAL);
+        angle = ANGULO_INICIAL;
         isVisible = true;
 		// Desenha no canvas
 		g = Window.getMyGraphics();
@@ -31,7 +34,6 @@ public class Turtle implements ITurtle{
 
 	@Override
     public void forward(int n) {
-		System.out.println("Param: "+n+"\nXINICIAL: "+pos.getX()+"\nYINICIAL: "+pos.getY());
 		g.drawLine(pos.getX(), pos.getY(), n, n);
     }
 
