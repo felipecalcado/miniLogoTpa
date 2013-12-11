@@ -2,6 +2,8 @@ package view;
 
 import controller.Controller;
 import interfaces.IController;
+import java.awt.Canvas;
+import java.awt.Graphics;
 import parser.RecursiveDescentSyntaticAnalyzerTest;
 
 /**
@@ -12,6 +14,7 @@ import parser.RecursiveDescentSyntaticAnalyzerTest;
 public class Window extends javax.swing.JFrame {
 	
 	Controller controller;
+	Graphics g;
 	
 	public Window() {
 		initComponents();
@@ -80,6 +83,10 @@ public class Window extends javax.swing.JFrame {
 		controller.executa();
     }//GEN-LAST:event_bt_runActionPerformed
 
+	public static Graphics getMyGraphics(){
+		return Canvas.getGraphics();
+	}
+	
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -109,7 +116,7 @@ public class Window extends javax.swing.JFrame {
 		});
 	}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Canvas;
+    private static javax.swing.JPanel Canvas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables

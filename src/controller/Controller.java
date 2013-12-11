@@ -7,6 +7,7 @@ package controller;
 import interfaces.IController;
 import java.util.ArrayList;
 import java.util.Iterator;
+import model.Turtle;
 
 /**
  *
@@ -16,8 +17,10 @@ import java.util.Iterator;
 public class Controller implements IController {
 	
 	private static ArrayList<String> listaCmd = new ArrayList<>(); 
+	Turtle turtle;
 
 	public Controller() {
+		turtle = new Turtle();
 	}
 	
 	@Override
@@ -59,7 +62,7 @@ public class Controller implements IController {
 	private void processaComandoComParam(String cmd, int param) {
 		if(cmd.equals("forward")) {
 			System.out.println("Comando entrou no if forward: "+cmd);
-//			tartaruga.forward(param);
+			turtle.forward(param);
 		} 
 	}
 
