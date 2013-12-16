@@ -5,9 +5,13 @@
 package controller;
 
 import interfaces.IController;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Iterator;
+import model.Observado;
 import model.Turtle;
+import model.GraphicsTurtle;
+import model.IObservador;
 
 /**
  *
@@ -17,10 +21,12 @@ import model.Turtle;
 public class Controller implements IController {
 	
 	private static ArrayList<String> listaCmd = new ArrayList<>(); 
-	Turtle turtle;
+    private Turtle turtle;
+    private IObservador gTurtle;
 
 	public Controller() {
 		turtle = new Turtle();
+		turtle.registraObservador(new GraphicsTurtle());
 	}
 	
 	@Override

@@ -1,88 +1,101 @@
 package model;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import view.Window;
-
+import java.util.ArrayList;
 
 /**
+ *  PADRÃO OBSERVER: ESSA CLASSE É O SUJEITO
  *
  * @author Anselmo
  */
-public class Turtle implements ITurtle{
+public class Turtle extends Observado{
 	
     private Vector2D<Integer> pos;
     private double angle;
     private boolean isVisible;
     private boolean isPenUp;
 	
-	Graphics g;
-	private final Color COR = Color.BLUE;
-	private final int X_INICIAL = 100;
-	private final int Y_INICIAL = 100;
-	private final double ANGULO_INICIAL = 0;
+	private String comando;
+	private int n;
 	
-
+	public final int X_INICIAL = 0;
+	public final int Y_INICIAL = 0;
+	
+	
     public Turtle () {
         pos = new Vector2D(X_INICIAL,Y_INICIAL);
-        angle = ANGULO_INICIAL;
+        angle = 0.0;
         isVisible = true;
-		// Desenha no canvas
-		g = Window.getMyGraphics();
-		g.setColor(COR);
+		observadores = new ArrayList<>();
     }
 
-	@Override
     public void forward(int n) {
-		g.drawLine(pos.getX(), pos.getY(), n, n);
+		setParams("forward", n);
+		notifica();
+		// atualiza posicao da tartaruga
+		pos.setX(pos.getX() + n);
+		pos.setY(pos.getY() + n);
     }
 
-	@Override
     public void backward(int n) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
-	@Override
     public void left(double n) {
         angle += n;
         angle = angle; 
                 
     }
 
-	@Override
     public void right(double n) {
         angle -= n;
         angle = angle; 
     }
 
-	@Override
     public void show() {
-        isVisible = true;
+        
     }
 
-	@Override
     public void hide() {
         isVisible = false;
     }
 
-	@Override
     public void penUp() {
         isPenUp = true;
     }
 
-	@Override
     public void penDown() {
         isPenUp = false;
     }
 
-	@Override
     public void penColor() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-	@Override
     public void clearScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+	
+	public int getPosX() {
+		return pos.getX();
+	}
+	
+	public int getPosY() {
+		return pos.getY();
+	}
+
+	private void setParams(String comando, int n) {
+		this.comando = comando;
+		this.n = n;
+	}
+	
+	public String getCmd(){
+		return comando;
+	}
+	
+	public int getN(){
+		return n;
+	}
+
+	
 }
 

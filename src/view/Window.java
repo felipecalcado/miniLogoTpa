@@ -1,8 +1,6 @@
 package view;
 
 import controller.Controller;
-import interfaces.IController;
-import java.awt.Canvas;
 import java.awt.Graphics;
 import parser.RecursiveDescentSyntaticAnalyzerTest;
 
@@ -110,7 +108,7 @@ public class Window extends javax.swing.JFrame {
 			public void run() {
 				new Window().setVisible(true);
 				RecursiveDescentSyntaticAnalyzerTest rdsat = new RecursiveDescentSyntaticAnalyzerTest();
-                rdsat.run("./src/logo/first.logo");
+                rdsat.run("./src/logo/teste.logo");
 //				Controller.printListaT();
 			}
 		});

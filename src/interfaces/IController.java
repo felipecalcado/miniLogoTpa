@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author
