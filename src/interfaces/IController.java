@@ -13,7 +13,7 @@ import java.awt.Graphics;
  */
 public interface IController {
 	
-	// Método principal do controllador chamado pelo botão run da view(bt_run)
+	// Método principal do controllador chamado pelo botão run da view (bt_run)
 	public void executa();
 	
 }

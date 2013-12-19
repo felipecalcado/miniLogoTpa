@@ -1,5 +1,7 @@
 package model;
 
+import interfaces.IObservador;
+import interfaces.IObservado;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -7,7 +9,7 @@ import view.Window;
 
 /**
  *
- *  PADRÃO OBSERVER: ESSA CLASSE É O OBSERVADOR
+ *  PADRÃO OBSERVER: ESSA CLASSE É UM OBSERVADOR
  * @author Anselmo
  */
 public class GraphicsTurtle implements IObservador{

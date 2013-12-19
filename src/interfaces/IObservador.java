@@ -1,4 +1,6 @@
-package model;
+package interfaces;
+
+import interfaces.IObservado;
 
 /**
  *

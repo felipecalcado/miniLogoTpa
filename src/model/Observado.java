@@ -1,5 +1,7 @@
 package model;
 
+import interfaces.IObservador;
+import interfaces.IObservado;
 import java.util.ArrayList;
 import java.util.Iterator;
 
